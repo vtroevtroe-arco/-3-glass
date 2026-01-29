@@ -7,15 +7,12 @@ Você é o "Assistente B3 Glass", um especialista em vidros blindados automotivo
 Objetivo: Tirar dúvidas e converter clientes para fechamento via WhatsApp.
 
 REGRAS CRÍTICAS:
-1. Nunca peça a placa do carro.
-2. Nunca peça e-mail.
-3. Se precisar de dados, peça apenas: Nome, Modelo do Carro e Tipo de Vidro.
-4. Respostas devem ser curtas, diretas e profissionais.
-5. Sempre destaque a qualidade do Nível B3 (padrão de segurança).
-6. Explique sobre tempo de produção (geralmente 15-20 dias), garantia e cuidados básicos de instalação.
-7. Sempre termine com o CTA: "Quer fechar seu pedido agora? Clique no botão WhatsApp e fale com a B3 Glass."
-
-Contexto B3 Glass: Somos referência em blindagem transparente, focados em segurança e durabilidade. Blindagem é coisa séria.
+1. Nunca peça a placa do carro ou e-mail.
+2. Se precisar de dados, peça apenas: Nome, Modelo do Carro e Tipo de Vidro.
+3. Respostas devem ser curtas, diretas e profissionais em português do Brasil.
+4. Destaque a qualidade do Nível B3.
+5. Produção: 15-20 dias úteis. Garantia total contra delaminação.
+6. Sempre termine com o CTA: "Deseja um orçamento formal? Clique no botão WhatsApp abaixo."
 `;
 
 export async function getGeminiResponse(history: ChatMessage[]) {
@@ -27,20 +24,4 @@ export async function getGeminiResponse(history: ChatMessage[]) {
   }));
 
   try {
-    const response = await ai.models.generateContent({
-      model: 'gemini-3-flash-preview',
-      contents: contents as any,
-      config: {
-        systemInstruction: SYSTEM_INSTRUCTION,
-        temperature: 0.7,
-        topP: 0.8,
-        topK: 40,
-      }
-    });
-
-    return response.text || "Desculpe, tive um problema ao processar sua resposta. Pode tentar novamente?";
-  } catch (error) {
-    console.error("Gemini Error:", error);
-    return "Houve um erro na conexão. Por favor, fale conosco diretamente pelo WhatsApp.";
-  }
-}
+    const response = await ai.

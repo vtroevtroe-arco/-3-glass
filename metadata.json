@@ -1,0 +1,7 @@
+{
+  "name": "B3 Glass - Vidros Blindados Automotivos",
+  "description": "Aplicativo profissional para gestão de ordens de serviço e atendimento por IA para a B3 Glass.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
